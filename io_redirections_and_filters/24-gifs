@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f -name "*.gif" -printf "0.000000\n" | sort -fi | sed "s/.gif$//"
+find . -type f -name "*.gif" -printf "0.000000\n" | sort -fi | rev | cut -c5- | rev
