@@ -2,7 +2,7 @@
 # This script manages manage_my_process
 case "$1" in
     start)
-        /root/alu-shell/processes_and_signals/manage_my_process &
+        ./manage_my_process &
         echo $! > /var/run/my_process.pid
         echo "manage_my_process started"
         ;;
@@ -14,7 +14,7 @@ case "$1" in
     restart)
         kill "$(cat /var/run/my_process.pid)"
         rm -f /var/run/my_process.pid
-        /root/alu-shell/processes_and_signals/manage_my_process &
+        ./manage_my_process &
         echo $! > /var/run/my_process.pid
         echo "manage_my_process restarted"
         ;;
